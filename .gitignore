@@ -1,0 +1,34 @@
+## Build
+**/bin/
+**/obj/
+**/out/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## IDE
+.vs/
+.idea/
+*.swp
+*~
+
+## OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+## Local media / test videos (do not commit)
+*.mkv
+*.avi
+*.mp4
+*.mov
+*.wmv
+*.m4v
+*.ts
+*.m2ts
+*.vob
+
+## Logs / local settings
+*.log
+appsettings.local.json

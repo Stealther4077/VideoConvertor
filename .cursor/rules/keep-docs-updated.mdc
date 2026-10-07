@@ -1,0 +1,32 @@
+---
+description: Keep project documentation synchronized with every code change
+alwaysApply: true
+---
+
+# Keep documentation up to date
+
+After any code or behavior change in this repo, update docs in the **same turn** before finishing.
+
+## Required updates
+
+| Changed | Update |
+|---------|--------|
+| Features, UX, CLI, user workflow | `README.md` |
+| Architecture, services, project layout | `docs/ARCHITECTURE.md` |
+| Plan/scope/phases | `PLAN.md` if the plan itself changed |
+| User-visible or notable technical change | Append entry to `docs/CHANGELOG.md` (date + short bullets) |
+
+## Rules
+
+- Do not leave docs describing removed or renamed APIs, settings, or UI labels
+- Prefer short factual edits over rewriting whole docs
+- If a change is internal-only (refactor with same behavior), still note it briefly in `CHANGELOG.md` when it affects maintainability
+- Never skip doc updates because the change “is small” — adjust the matching section or add one CHANGELOG line
+- Media test files (`.mkv`, `.avi`, etc.) are not part of the product; do not document them as app assets
+
+## Example
+
+```text
+✅ Added folder-recursive import → update README usage + CHANGELOG
+❌ Added folder-recursive import → only changed C# and said “done”
+```
