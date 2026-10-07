@@ -2,6 +2,8 @@
 **/bin/
 **/obj/
 **/out/
+publish-temp/
+*.pdb
 *.user
 *.suo
 *.userosscache

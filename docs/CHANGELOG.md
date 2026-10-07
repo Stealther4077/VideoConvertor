@@ -13,4 +13,5 @@
 - Smart mode checkbox **Skip if already H.264** (default on): probe codec and skip compatible files instead of re-encoding
 - Pre-scan all queued files before encoding so skips are applied first; overall progress is duration-weighted for encode jobs only
 - Show estimated time remaining (ETA) from remaining media duration and ffmpeg `speed`
+- Add self-contained `FileConverter.exe` in the repo root for direct GitHub download
 

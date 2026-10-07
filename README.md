@@ -5,12 +5,20 @@ Convert one file, many files, or everything in a folder — with a queue, live p
 
 Powered by **ffmpeg** / **ffprobe**.
 
+## Download (no build)
+
+1. Get **[`FileConverter.exe`](./FileConverter.exe)** from this repo root (self-contained Windows x64 build — .NET runtime included).
+2. Install [ffmpeg](https://ffmpeg.org/) if needed: `winget install Gyan.FFmpeg`
+3. Run `FileConverter.exe`
+
+Windows may warn about an unsigned download — that’s expected for a direct GitHub binary.
+
 ## Requirements
 
-- Windows 10/11
-- [.NET 8 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/8.0) (or SDK to build)
+- Windows 10/11 (x64)
 - [ffmpeg](https://ffmpeg.org/) on `PATH`, or browsable via **Locate ffmpeg…** in the app  
   Example install: `winget install Gyan.FFmpeg`
+- To build from source: [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 
 ## Run (from source)
 
@@ -19,9 +27,13 @@ cd c:\FakeDesktop\00_Projects\FileConverter
 dotnet run --project src/FileConverter.App/FileConverter.App.csproj -c Release
 ```
 
-Built binary:
+Publish a fresh root exe:
 
-`src/FileConverter.App/bin/Release/net8.0-windows/FileConverter.exe`
+```powershell
+dotnet publish src/FileConverter.App/FileConverter.App.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -p:EnableCompressionInSingleFile=true -o publish-temp
+Copy-Item -Force publish-temp\FileConverter.exe .\FileConverter.exe
+Remove-Item -Recurse -Force publish-temp
+```
 
 ## Usage
 

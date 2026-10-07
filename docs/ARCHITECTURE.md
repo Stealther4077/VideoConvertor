@@ -18,8 +18,9 @@ UI stays responsive: conversion runs on async tasks; progress is marshaled via `
 
 | Path | Role |
 |------|------|
-| `src/FileConverter.App` | Single WPF executable (`FileConverter.exe`) |
+| `src/FileConverter.App` | WPF application project |
 | `src/FileConverter.slnx` | Solution entry |
+| `FileConverter.exe` (repo root) | Self-contained win-x64 single-file publish for GitHub download |
 
 ## Key types
 
